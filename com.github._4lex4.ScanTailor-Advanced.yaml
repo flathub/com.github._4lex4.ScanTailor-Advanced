@@ -33,6 +33,8 @@ modules:
       - type: file
         path: com.github._4lex4.ScanTailor-Advanced.appdata.xml
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
     post-install:
       - install -Dm0644 -t /app/share/appdata com.github._4lex4.ScanTailor-Advanced.appdata.xml
       - mv /app/share/mime/packages/scantailor-project.xml /app/share/mime/packages/com.github._4lex4.ScanTailor-Advanced.xml
