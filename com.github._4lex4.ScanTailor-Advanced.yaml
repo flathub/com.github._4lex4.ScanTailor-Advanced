@@ -11,6 +11,14 @@ finish-args:
   - --socket=wayland
   - --device=dri
   - --filesystem=host
+cleanup:
+  - '*.a'
+  - '*.la'
+  - /include
+  - /lib/cmake
+  - /lib/pkgconfig
+  - /share/doc
+  - /share/man
 modules:
   - name: boost
     sources:
@@ -21,9 +29,6 @@ modules:
     build-commands:
       - ./bootstrap.sh --prefix=/app --with-libraries=test,system,signals
       - ./b2 install
-    cleanup:
-      - /include
-      - /lib/*.a
 
   - name: scantailor-advanced
     sources:
