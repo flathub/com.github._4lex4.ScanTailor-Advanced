@@ -29,26 +29,26 @@
   </description>
   <screenshots>
     <screenshot>
-      <image type="source" width="1195" height="663">https://raw.githubusercontent.com/flathub/com.github._4lex4.ScanTailor-Advanced/master/screenshots/1_split_pages.png</image>
+      <image type="source" width="1195" height="663">https://raw.githubusercontent.com/flathub/com.github._4lex4.ScanTailor-Advanced/beta/screenshots/1_split_pages.png</image>
     </screenshot>
     <screenshot>
-      <image type="source" width="1195" height="663">https://raw.githubusercontent.com/flathub/com.github._4lex4.ScanTailor-Advanced/master/screenshots/2_deskew.png</image>
+      <image type="source" width="1195" height="663">https://raw.githubusercontent.com/flathub/com.github._4lex4.ScanTailor-Advanced/beta/screenshots/2_deskew.png</image>
     </screenshot>
     <screenshot>
-      <image type="source" width="1195" height="663">https://raw.githubusercontent.com/flathub/com.github._4lex4.ScanTailor-Advanced/master/screenshots/3_select_content.png</image>
+      <image type="source" width="1195" height="663">https://raw.githubusercontent.com/flathub/com.github._4lex4.ScanTailor-Advanced/beta/screenshots/3_select_content.png</image>
     </screenshot>
     <screenshot>
-      <image type="source" width="1195" height="663">https://raw.githubusercontent.com/flathub/com.github._4lex4.ScanTailor-Advanced/master/screenshots/4_margins.png</image>
+      <image type="source" width="1195" height="663">https://raw.githubusercontent.com/flathub/com.github._4lex4.ScanTailor-Advanced/beta/screenshots/4_margins.png</image>
     </screenshot>
     <screenshot>
-      <image type="source" width="1195" height="663">https://raw.githubusercontent.com/flathub/com.github._4lex4.ScanTailor-Advanced/master/screenshots/5_output.png</image>
+      <image type="source" width="1195" height="663">https://raw.githubusercontent.com/flathub/com.github._4lex4.ScanTailor-Advanced/beta/screenshots/5_output.png</image>
     </screenshot>
   </screenshots>
   <launchable type="desktop-id">com.github._4lex4.ScanTailor-Advanced.desktop</launchable>
   <url type="bugtracker">https://github.com/4lex4/scantailor-advanced/issues</url>
   <url type="homepage">https://github.com/4lex4/scantailor-advanced</url>
   <releases>
-    <release version="v1.0.16" date="2018-07-17" />
+    <release version="2019.8.16 Early Access" date="2019-08-16" />
   </releases>
   <content_rating type="oars-1.1" />
 </component>
