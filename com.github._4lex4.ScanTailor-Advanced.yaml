@@ -1,6 +1,6 @@
 app-id: com.github._4lex4.ScanTailor-Advanced
 runtime: org.kde.Platform
-runtime-version: '5.14'
+runtime-version: '5.15'
 sdk: org.kde.Sdk
 command: scantailor
 rename-desktop-file: scantailor.desktop
@@ -48,6 +48,8 @@ modules:
         sha256: 7ee3aaffa9a234a3171d3d0d75bc34a6acc7e78f85f5a70d6cf7ae481c8d1a48
       - type: file
         path: com.github._4lex4.ScanTailor-Advanced.appdata.xml
+      - type: patch
+        path: scantailor-fixes.patch
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
