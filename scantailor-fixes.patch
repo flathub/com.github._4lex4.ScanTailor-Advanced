@@ -1,0 +1,93 @@
+diff --git a/src/core/ImageViewBase.cpp b/src/core/ImageViewBase.cpp
+index 49adbda..49d3996 100644
+--- a/src/core/ImageViewBase.cpp
++++ b/src/core/ImageViewBase.cpp
+@@ -8,6 +8,7 @@
+ #include <QGLWidget>
+ #include <QMouseEvent>
+ #include <QPaintEngine>
++#include <QPainterPath>
+ #include <QPointer>
+ #include <QScrollBar>
+ #include <QtWidgets/QMainWindow>
+diff --git a/src/core/filters/output/OutputGenerator.cpp b/src/core/filters/output/OutputGenerator.cpp
+index 6e5703a..e3b4aab 100644
+--- a/src/core/filters/output/OutputGenerator.cpp
++++ b/src/core/filters/output/OutputGenerator.cpp
+@@ -39,6 +39,7 @@
+ #include <QColor>
+ #include <QDebug>
+ #include <QPainter>
++#include <QPainterPath>
+ #include <QPointF>
+ #include <QPolygonF>
+ #include <QSize>
+@@ -2666,4 +2667,4 @@ DistortionModel OutputGenerator::Processor::buildMarginalDistortionModel() const
+ 
+   return distortion_model;
+ }
+-}  // namespace output
+\ No newline at end of file
++}  // namespace output
+diff --git a/src/core/filters/page_layout/ImageView.cpp b/src/core/filters/page_layout/ImageView.cpp
+index 56b0460..719257a 100644
+--- a/src/core/filters/page_layout/ImageView.cpp
++++ b/src/core/filters/page_layout/ImageView.cpp
+@@ -12,6 +12,7 @@
+ #include <imageproc/Transform.h>
+ #include <QMouseEvent>
+ #include <QPainter>
++#include <QPainterPath>
+ #include <boost/bind.hpp>
+ #include <boost/lambda/lambda.hpp>
+ #include "ImagePresentation.h"
+@@ -1145,4 +1146,4 @@ void ImageView::enableMiddleRectInteraction(const bool state) {
+ bool ImageView::isShowingMiddleRectEnabled() const {
+   return (!m_nullContentRect && m_settings->isShowingMiddleRectEnabled()) || m_alignment.isNull();
+ }
+-}  // namespace page_layout
+\ No newline at end of file
++}  // namespace page_layout
+diff --git a/src/core/filters/select_content/ContentBoxFinder.cpp b/src/core/filters/select_content/ContentBoxFinder.cpp
+index 0f81e07..11e539f 100644
+--- a/src/core/filters/select_content/ContentBoxFinder.cpp
++++ b/src/core/filters/select_content/ContentBoxFinder.cpp
+@@ -20,6 +20,7 @@
+ #include <Transform.h>
+ #include <QDebug>
+ #include <QPainter>
++#include <QPainterPath>
+ #include <cmath>
+ #include <queue>
+ #include "DebugImages.h"
+@@ -1338,4 +1339,4 @@ const SEDM& ContentBoxFinder::Garbage::sedm() {
+ 
+   return m_sedm;
+ }
+-}  // namespace select_content
+\ No newline at end of file
++}  // namespace select_content
+diff --git a/src/core/zones/ZoneContextMenuInteraction.cpp b/src/core/zones/ZoneContextMenuInteraction.cpp
+index 8eef424..a44ba2b 100644
+--- a/src/core/zones/ZoneContextMenuInteraction.cpp
++++ b/src/core/zones/ZoneContextMenuInteraction.cpp
+@@ -6,6 +6,7 @@
+ #include <QMenu>
+ #include <QMessageBox>
+ #include <QPainter>
++#include <QPainterPath>
+ #include <boost/bind.hpp>
+ #include "ImageViewBase.h"
+ #include "ZoneInteractionContext.h"
+diff --git a/src/core/zones/ZoneDefaultInteraction.cpp b/src/core/zones/ZoneDefaultInteraction.cpp
+index 6962f2b..d81b493 100644
+--- a/src/core/zones/ZoneDefaultInteraction.cpp
++++ b/src/core/zones/ZoneDefaultInteraction.cpp
+@@ -4,6 +4,7 @@
+ #include "ZoneDefaultInteraction.h"
+ #include <QMouseEvent>
+ #include <QPainter>
++#include <QPainterPath>
+ #include "ImageViewBase.h"
+ #include "SerializableSpline.h"
+ #include "ZoneInteractionContext.h"
