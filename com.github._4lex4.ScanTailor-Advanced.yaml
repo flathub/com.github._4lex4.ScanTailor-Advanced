@@ -35,8 +35,6 @@ modules:
   - name: libtiff
     buildsystem: cmake-ninja
     cleanup:
-       - /include
-       - '*.a'
        - '*.so'
     sources:
        - type: git
