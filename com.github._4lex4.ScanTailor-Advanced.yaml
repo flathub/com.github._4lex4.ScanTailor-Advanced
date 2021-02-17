@@ -49,7 +49,7 @@ modules:
       - type: file
         path: com.github._4lex4.ScanTailor-Advanced.appdata.xml
       - type: patch
-        path: scantailor-fixes.patch
+        path: scantailor-qt5.15.patch
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
