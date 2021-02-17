@@ -38,13 +38,6 @@
  #include <cmath>
  #include <queue>
  #include "DebugImages.h"
-@@ -1353,4 +1354,4 @@
- 
-   return m_sedm;
- }
--}  // namespace select_content
-\ No newline at end of file
-+}  // namespace select_content
 --- scantailor-advanced/filters/page_layout/ImageView.cpp	2018-07-16 22:04:23.000000000 -0400
 +++ scantailor-advanced/filters/page_layout/ImageView.cpp-new	2020-12-31 11:58:52.062201799 -0500
 @@ -20,6 +20,7 @@
@@ -55,13 +48,6 @@
  #include <UnitsConverter.h>
  #include <imageproc/Binarize.h>
  #include <imageproc/GrayImage.h>
-@@ -1160,4 +1161,4 @@
- bool ImageView::isShowingMiddleRectEnabled() const {
-   return (!m_nullContentRect && m_settings->isShowingMiddleRectEnabled()) || m_alignment.isNull();
- }
--}  // namespace page_layout
-\ No newline at end of file
-+}  // namespace page_layout
 --- scantailor-advanced/filters/output/OutputGenerator.cpp	2018-07-16 22:04:23.000000000 -0400
 +++ scantailor-advanced/filters/output/OutputGenerator.cpp-new	2020-12-31 12:01:02.648791613 -0500
 @@ -25,6 +25,7 @@
@@ -72,10 +58,3 @@
  #include <QtCore/QSettings>
  #include <boost/bind.hpp>
  #include "DebugImages.h"
-@@ -2666,4 +2667,4 @@
-                  posterizationOptions.isForceBlackAndWhite(), 0, qRound(background_color.lightnessF() * 255))
-       .getImage();
- }
--}  // namespace output
-\ No newline at end of file
-+}  // namespace output
