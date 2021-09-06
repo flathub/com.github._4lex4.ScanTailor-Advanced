@@ -1,26 +1,26 @@
---- scantailor-advanced/ImageViewBase.cpp	2018-07-16 22:04:23.000000000 -0400
-+++ scantailor-advanced/ImageViewBase.cpp-new	2020-12-31 11:41:14.721001065 -0500
-@@ -21,6 +21,7 @@
+--- scantailor-advanced/src/core/ImageViewBase.cpp	2018-07-16 22:04:23.000000000 -0400
++++ scantailor-advanced/src/core/ImageViewBase.cpp-new	2020-12-31 11:41:14.721001065 -0500
+@@ -8,6 +8,7 @@
  #include <QGLWidget>
  #include <QMouseEvent>
  #include <QPaintEngine>
 +#include <QPainterPath>
  #include <QPointer>
  #include <QScrollBar>
- #include <QSettings>
---- scantailor-advanced/zones/ZoneContextMenuInteraction.cpp	2018-07-16 22:04:23.000000000 -0400
-+++ scantailor-advanced/zones/ZoneContextMenuInteraction.cpp-new	2020-12-31 11:46:58.358606192 -0500
-@@ -21,6 +21,7 @@
+ #include <QtWidgets/QMainWindow>
+--- scantailor-advanced/src/core/zones/ZoneContextMenuInteraction.cpp	2018-07-16 22:04:23.000000000 -0400
++++ scantailor-advanced/src/core/zones/ZoneContextMenuInteraction.cpp-new	2020-12-31 11:46:58.358606192 -0500
+@@ -6,6 +6,7 @@
  #include <QMenu>
  #include <QMessageBox>
  #include <QPainter>
 +#include <QPainterPath>
- #include <QSignalMapper>
  #include <boost/bind.hpp>
  #include "ImageViewBase.h"
---- scantailor-advanced/zones/ZoneDefaultInteraction.cpp	2018-07-16 22:04:23.000000000 -0400
-+++ scantailor-advanced/zones/ZoneDefaultInteraction.cpp-new	2020-12-31 11:48:42.643217635 -0500
-@@ -19,6 +19,7 @@
+ #include "ZoneInteractionContext.h"
+--- scantailor-advanced/src/core/zones/ZoneDefaultInteraction.cpp	2018-07-16 22:04:23.000000000 -0400
++++ scantailor-advanced/src/core/zones/ZoneDefaultInteraction.cpp-new	2020-12-31 11:48:42.643217635 -0500
+@@ -4,6 +4,7 @@
  #include "ZoneDefaultInteraction.h"
  #include <QMouseEvent>
  #include <QPainter>
@@ -28,33 +28,33 @@
  #include "ImageViewBase.h"
  #include "SerializableSpline.h"
  #include "ZoneInteractionContext.h"
---- scantailor-advanced/filters/select_content/ContentBoxFinder.cpp	2018-07-16 22:04:23.000000000 -0400
-+++ scantailor-advanced/filters/select_content/ContentBoxFinder.cpp-new	2020-12-31 11:56:09.909999087 -0500
-@@ -19,6 +19,7 @@
- #include "ContentBoxFinder.h"
+--- scantailor-advanced/src/core/filters/select_content/ContentBoxFinder.cpp	2018-07-16 22:04:23.000000000 -0400
++++ scantailor-advanced/src/core/filters/select_content/ContentBoxFinder.cpp-new	2020-12-31 11:56:09.909999087 -0500
+@@ -20,6 +20,7 @@
+ #include <Transform.h>
  #include <QDebug>
  #include <QPainter>
 +#include <QPainterPath>
  #include <cmath>
  #include <queue>
  #include "DebugImages.h"
---- scantailor-advanced/filters/page_layout/ImageView.cpp	2018-07-16 22:04:23.000000000 -0400
-+++ scantailor-advanced/filters/page_layout/ImageView.cpp-new	2020-12-31 11:58:52.062201799 -0500
-@@ -20,6 +20,7 @@
+--- scantailor-advanced/src/core/filters/page_layout/ImageView.cpp	2018-07-16 22:04:23.000000000 -0400
++++ scantailor-advanced/src/core/filters/page_layout/ImageView.cpp-new	2020-12-31 11:58:52.062201799 -0500
+@@ -5,6 +5,7 @@
  #include <Despeckle.h>
- #include <EmptyTaskStatus.h>
+ #include <NullTaskStatus.h>
  #include <ImageViewInfoProvider.h>
 +#include <QPainterPath>
  #include <UnitsConverter.h>
  #include <imageproc/Binarize.h>
  #include <imageproc/GrayImage.h>
---- scantailor-advanced/filters/output/OutputGenerator.cpp	2018-07-16 22:04:23.000000000 -0400
-+++ scantailor-advanced/filters/output/OutputGenerator.cpp-new	2020-12-31 12:01:02.648791613 -0500
-@@ -25,6 +25,7 @@
- #include <imageproc/ImageCombination.h>
+--- scantailor-advanced/src/core/filters/output/OutputGenerator.cpp	2018-07-16 22:04:23.000000000 -0400
++++ scantailor-advanced/src/core/filters/output/OutputGenerator.cpp-new	2020-12-31 12:01:02.648791613 -0500
+@@ -39,6 +39,7 @@
+ #include <QColor>
  #include <QDebug>
  #include <QPainter>
 +#include <QPainterPath>
- #include <QtCore/QSettings>
- #include <boost/bind.hpp>
- #include "DebugImages.h"
+ #include <QPointF>
+ #include <QPolygonF>
+ #include <QSize>
