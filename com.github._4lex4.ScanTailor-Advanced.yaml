@@ -48,7 +48,7 @@ modules:
         url: https://github.com/4lex4/scantailor-advanced/archive/2019.8.16_EA.tar.gz
         sha256: 7ee3aaffa9a234a3171d3d0d75bc34a6acc7e78f85f5a70d6cf7ae481c8d1a48
       - type: file
-        path: com.github._4lex4.ScanTailor-Advanced.appdata.xml
+        path: com.github._4lex4.ScanTailor-Advanced.metainfo.xml
       - type: patch
         path: scantailor-qt5.15.patch
     buildsystem: cmake-ninja
@@ -56,7 +56,7 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
     post-install:
-      - install -Dm0644 -t /app/share/metainfo ../com.github._4lex4.ScanTailor-Advanced.appdata.xml
+      - install -Dm0644 -t /app/share/metainfo ../com.github._4lex4.ScanTailor-Advanced.metainfo.xml
       - mv /app/share/mime/packages/scantailor-project.xml /app/share/mime/packages/com.github._4lex4.ScanTailor-Advanced.xml
       - |
         for res in 16 32 48 64 128 256 512; do
