@@ -1,6 +1,6 @@
 app-id: com.github._4lex4.ScanTailor-Advanced
 runtime: org.kde.Platform
-runtime-version: '5.15'
+runtime-version: '5.15-21.08'
 sdk: org.kde.Sdk
 command: scantailor
 rename-desktop-file: scantailor.desktop
