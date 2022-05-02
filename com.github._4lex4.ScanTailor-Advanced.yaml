@@ -33,8 +33,13 @@ modules:
   - name: scantailor-advanced
     sources:
       - type: archive
-        url: https://github.com/4lex4/scantailor-advanced/archive/2019.8.16_EA.tar.gz
+        url: https://github.com/4lex4/scantailor-advanced/archive/refs/tags/2019.8.16_EA.tar.gz
         sha256: 7ee3aaffa9a234a3171d3d0d75bc34a6acc7e78f85f5a70d6cf7ae481c8d1a48
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/4lex4/scantailor-advanced/releases
+          version-query: '[.[] | select(.draft == false and .prerelease == true)][0].tag_name'
+          url-query: '"https://github.com/4lex4/scantailor-advanced/archive/refs/tags/" + $version + ".tar.gz"'
       - type: file
         path: com.github._4lex4.ScanTailor-Advanced.metainfo.xml
       - type: patch
