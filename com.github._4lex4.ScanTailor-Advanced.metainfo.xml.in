@@ -48,7 +48,7 @@
   <url type="bugtracker">https://github.com/4lex4/scantailor-advanced/issues</url>
   <url type="homepage">https://github.com/4lex4/scantailor-advanced</url>
   <releases>
-    <release version="v1.0.16" date="2018-07-17" />
+    <release version="{RELEASE_VERSION}" date="{RELEASE_DATE}" />
   </releases>
   <content_rating type="oars-1.1" />
 </component>

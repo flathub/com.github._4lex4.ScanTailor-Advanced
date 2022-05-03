@@ -32,23 +32,29 @@ modules:
 
   - name: scantailor-advanced
     sources:
-      - type: archive
-        url: https://github.com/4lex4/scantailor-advanced/archive/refs/tags/v1.0.16.tar.gz
-        sha256: 84629d2edba4c36c62bdb75eedb145262b894d950bcb95cec0dab43e21bdb909
+      - type: git
+        url: https://github.com/4lex4/scantailor-advanced.git
+        tag: v1.0.16
+        commit: 5e0068f5139575bce07d2284f12e1d3cf4609e9c
         x-checker-data:
           type: json
           url: https://api.github.com/repos/4lex4/scantailor-advanced/releases
-          version-query: '[.[] | select(.draft == false and (.prerelease == false or (.tag_name | startswith("v"))))][0].tag_name'
-          url-query: '"https://github.com/4lex4/scantailor-advanced/archive/refs/tags/" + $version + ".tar.gz"'
+          tag-query: '[.[] | select(.draft == false and (.prerelease == false or (.tag_name | startswith("v"))))][0].tag_name'
       - type: file
-        path: com.github._4lex4.ScanTailor-Advanced.metainfo.xml
+        path: com.github._4lex4.ScanTailor-Advanced.metainfo.xml.in
       - type: patch
         path: scantailor-qt5.15.patch
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
     post-install:
-      - install -Dm0644 -t /app/share/metainfo com.github._4lex4.ScanTailor-Advanced.metainfo.xml
+      - |
+        # Set version and release data in our custom Metainfo and install it
+        set -e
+        version="$(git describe --tags --exact-match)"
+        date="$(git log -1 --date=short --format=%cd)"
+        sed -e "s/{RELEASE_VERSION}/${version}/g" -e "s/{RELEASE_DATE}/${date}/g" com.github._4lex4.ScanTailor-Advanced.metainfo.xml.in >com.github._4lex4.ScanTailor-Advanced.metainfo.xml
+        install -Dm0644 -t /app/share/metainfo com.github._4lex4.ScanTailor-Advanced.metainfo.xml
       - mv /app/share/mime/packages/scantailor-project.xml /app/share/mime/packages/com.github._4lex4.ScanTailor-Advanced.xml
       - |
         for res in 16 32 48 64 128 256 512; do
