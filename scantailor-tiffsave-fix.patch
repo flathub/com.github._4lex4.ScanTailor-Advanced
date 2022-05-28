@@ -1,0 +1,23 @@
+commit 5ee818e03f2201e34e3707151133dee3f2e43de9
+Author: Hubert Figuière <hub@figuiere.net>
+Date:   Tue Jan 5 15:23:48 2021 -0500
+
+    Issue #164 - Fix TIFF saving when JPEG and posterized
+
+diff --git a/src/core/TiffWriter.cpp b/src/core/TiffWriter.cpp
+index f68b021..385c4ec 100644
+--- a/src/core/TiffWriter.cpp
++++ b/src/core/TiffWriter.cpp
+@@ -225,8 +225,10 @@ bool TiffWriter::writeBitonalOrIndexed8Image(const TiffHandle& tif, const QImage
+   }
+ 
+   if (image.format() == QImage::Format_Indexed8) {
+-    TIFFSetField(tif.handle(), TIFFTAG_COMPRESSION,
+-                 uint16(ApplicationSettings::getInstance().getTiffColorCompression()));
++    uint16 compress = (photometric == PHOTOMETRIC_PALETTE) ?
++                      COMPRESSION_LZW :
++                      uint16(ApplicationSettings::getInstance().getTiffColorCompression());
++    TIFFSetField(tif.handle(), TIFFTAG_COMPRESSION, compress);
+   } else {
+     TIFFSetField(tif.handle(), TIFFTAG_COMPRESSION, uint16(ApplicationSettings::getInstance().getTiffBwCompression()));
+   }
