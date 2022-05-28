@@ -44,6 +44,8 @@ modules:
         path: com.github._4lex4.ScanTailor-Advanced.metainfo.xml.in
       - type: patch
         path: scantailor-qt5.15.patch
+      - type: patch
+        path: scantailor-tiffsave-fix.patch
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
