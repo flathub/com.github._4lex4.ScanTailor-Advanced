@@ -63,6 +63,6 @@ modules:
       - mv /app/share/mime/packages/scantailor-project.xml /app/share/mime/packages/com.github._4lex4.ScanTailor-Advanced.xml
       - |
         for res in 16 32 48 64 128 256 512; do
-          rsvg-convert --width ${res} --keep-aspect-ratio --format png --output ScanTailor_${res}.png /app/share/icons/hicolor/scalable/apps/ScanTailor.svg || exit 1
+          rsvg-convert --width ${res} --height ${res} --page-width ${res} --page-height ${res} --keep-aspect-ratio --format png --output ScanTailor_${res}.png /app/share/icons/hicolor/scalable/apps/ScanTailor.svg || exit 1
           install -Dm0644 ScanTailor_${res}.png /app/share/icons/hicolor/${res}x${res}/apps/ScanTailor.png || exit 1
         done
