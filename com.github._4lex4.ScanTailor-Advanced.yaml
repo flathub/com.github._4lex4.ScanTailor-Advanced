@@ -1,6 +1,6 @@
 app-id: com.github._4lex4.ScanTailor-Advanced
 runtime: org.kde.Platform
-runtime-version: '5.15-22.08'
+runtime-version: 5.15-22.08
 sdk: org.kde.Sdk
 command: scantailor
 rename-desktop-file: scantailor.desktop
@@ -41,7 +41,8 @@ modules:
         x-checker-data:
           type: json
           url: https://api.github.com/repos/4lex4/scantailor-advanced/releases
-          tag-query: '[.[] | select(.draft == false and (.prerelease == false or (.tag_name | startswith("v"))))][0].tag_name'
+          tag-query: '[.[] | select(.draft == false and (.prerelease == false or (.tag_name
+            | startswith("v"))))][0].tag_name'
       - type: file
         path: com.github._4lex4.ScanTailor-Advanced.metainfo.xml.in
       - type: patch
