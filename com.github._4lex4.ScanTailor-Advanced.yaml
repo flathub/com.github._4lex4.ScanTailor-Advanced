@@ -41,7 +41,7 @@ modules:
         x-checker-data:
           type: json
           url: https://api.github.com/repos/4lex4/scantailor-advanced/releases
-          tag-query: '[.[] | select(.draft == false and .prerelease == true)][0].tag_name'
+          tag-query: '[.[] | select(.draft == false)][0].tag_name'
       - type: file
         path: com.github._4lex4.ScanTailor-Advanced.metainfo.xml.in
       - type: patch
