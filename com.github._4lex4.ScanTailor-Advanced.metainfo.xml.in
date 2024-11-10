@@ -5,6 +5,7 @@
   <project_license>GPL-3.0-or-later</project_license>
   <name>ScanTailor Advanced</name>
   <summary>Interactive post-processing tool for scanned pages</summary>
+  <developer_name>ScanTailor-Advanced developers</developer_name>
   <description>
     <p>
       ScanTailor is an interactive post-processing tool for scanned pages.
@@ -28,8 +29,8 @@
     </p>
   </description>
   <screenshots>
-    <screenshot>
-      <image type="source" width="1195" height="663">https://raw.githubusercontent.com/flathub/com.github._4lex4.ScanTailor-Advanced/beta/screenshots/1_split_pages.png</image>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/flathub/com.github._4lex4.ScanTailor-Advanced/beta/screenshots/1_split_pages.png</image>
     </screenshot>
     <screenshot>
       <image type="source" width="1195" height="663">https://raw.githubusercontent.com/flathub/com.github._4lex4.ScanTailor-Advanced/beta/screenshots/2_deskew.png</image>
