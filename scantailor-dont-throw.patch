@@ -1,0 +1,28 @@
+commit 318194cf800ea1e095836ce843d9885f315988e7
+Author: Hubert Figuière <hub@figuiere.net>
+Date:   Fri Jul 15 21:20:23 2022 -0400
+
+    Don't throw if the content area is bigger than the image (crash)
+
+diff --git a/src/core/filters/output/OutputGenerator.cpp b/src/core/filters/output/OutputGenerator.cpp
+index e3b4aab..4142957 100644
+--- a/src/core/filters/output/OutputGenerator.cpp
++++ b/src/core/filters/output/OutputGenerator.cpp
+@@ -527,7 +527,7 @@ void fillMarginsInPlace(QImage& image,
+                         const QColor& color,
+                         const bool antialiasing = true) {
+   if (content_poly.intersected(QRectF(image.rect())) != content_poly) {
+-    throw std::invalid_argument("fillMarginsInPlace: the content area exceeds image rect.");
++    qWarning() << "fillMarginsInPlace: the content area " << content_poly << " exceeds image rect." << image.rect();
+   }
+ 
+   if ((image.format() == QImage::Format_Mono) || (image.format() == QImage::Format_MonoLSB)) {
+@@ -564,7 +564,7 @@ void fillMarginsInPlace(QImage& image,
+ 
+ void fillMarginsInPlace(BinaryImage& image, const QPolygonF& content_poly, const BWColor color) {
+   if (content_poly.intersected(QRectF(image.rect())) != content_poly) {
+-    throw std::invalid_argument("fillMarginsInPlace: the content area exceeds image rect.");
++    qWarning() << "fillMarginsInPlace (BW): the content area " << content_poly << " exceeds image rect." << image.rect();
+   }
+ 
+   PolygonRasterizer::fillExcept(image, color, content_poly, Qt::WindingFill);
